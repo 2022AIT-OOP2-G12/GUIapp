@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>画像出力</title>
+  </head>
+  <body>
+    <div class="output">
+      <div class="input_rgb">
+        <!-- 設定したRGB値 -->
+        <h2>設定したRGB値</h2>
+        <p>赤：{{ r }}</p>
+        <p>緑：{{ g }}</p>
+        <p>青：{{ b }}</p>
+      </div>
+
+      <div class="output_img">
+        <!-- 画像出力 -->
+        <h2>設定地と似ている画像</h2>
+        <img src="data:image/png;base64,{{ img }}" alt="画像" />
+      </div>
+    </div>
+    <div>
+      <!-- 入力画面に戻る -->
+      <a href="/">入力画面に戻る</a>
+    </div>
+  </body>
+</html>
