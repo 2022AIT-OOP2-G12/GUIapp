@@ -1,6 +1,7 @@
 import cv2
 import pathlib
 import numpy as np
+import json
 
 input_dir = "images"
 input_list = list(pathlib.Path(input_dir).glob('**/*.jpg'))
@@ -28,5 +29,16 @@ for i in range(len(input_list)):
     print(sumb)
     print(sumr)
 
+    data = {
+        "path": str(input_list[i]),
+        'g': str(sumg),
+        'b': str(sumb),
+        'r': str(sumr)
+    }
+
+    path2 = "./Data/data.json"
+    json_file2 = open(path2, mode = "w")
+    json.dump(data, json_file2, ensure_ascii=False)
+    json_file2.close()
             
 #cv2.imwrite('god2.jpeg', god_img)
