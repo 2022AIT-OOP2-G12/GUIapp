@@ -16,8 +16,8 @@ for i in range(len(input_list)):
     sumr = 0
 
     for x in range(g_width):
-            for y in range(g_hight):
-                g, b, r = img[y, x]
+        for y in range(g_hight):
+            g, b, r = img[y, x]
                 #print(vv_img[y, x, :])
                 
             sumg = abs(g) + sumg
