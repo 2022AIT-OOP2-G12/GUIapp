@@ -6,14 +6,14 @@
 | Spotifyのライブラリ ||
 | スロットのような確率機 ||
 
-| 名前 | 学籍番号 | 役割 |
-|-----|-----|-----|
-| 小野田一輝 | k21032 | チームリーダー,PullRequest |
-| 酒井颯 | k21056 | 入力画面,JavaScript(web) |
-| 大文字翔 | k21078 | 出力画面,css(web) |
-| 佐藤睦樹 | k21063 | python,openCV |
-| 中島浩貴 | k21150 | python,openCV |
-| 西田拓磨 | k21092 | python,openCV |
+| 名前 | 学籍番号 | 役割 | 備考 |
+|-----|-----|-----|-----|
+| 小野田一輝 | k21032 | チームリーダー,PullRequest |  |
+| 酒井颯 | k21056 | 入力画面,JavaScript(web) | 裏側の処理を考えます |
+| 大文字翔 | k21078 | 出力画面,css(web) |  |
+| 佐藤睦樹 | k21063 | python,openCV |  |
+| 中島浩貴 | k21150 | python,openCV |  | 
+| 西田拓磨 | k21092 | python,openCV |  |
 
 ## 仕様
 - flaskを使った画像検索アプリ
