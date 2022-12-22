@@ -21,5 +21,10 @@
 - 画像検索ページでR,G,Bの値から画像を検索できる
 - CSSで画面を見やすくする
 
+- templatesの中にはhtmlファイルを保存
+- imagesの中には画像ファイルを保存
+- staticの中にはcss,javascriptなどその他Web系ファイルを保存
+
+
 ## アプリ完成イメージ
 - 完成イメージはimg.jpegを参照
