@@ -9,7 +9,7 @@ app.config["JSON_AS_ASCII"] = False  # 日本語などのASCII以外の文字列
 def index():
     return render_template("index.html")
 
-@app.route('/outout')
+@app.route('/output')
 def upload():
     ps = 'aaa'
     img = out_img(ps)
