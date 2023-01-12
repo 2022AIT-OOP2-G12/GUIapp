@@ -5,9 +5,9 @@ import json
 
 def Sort(r, g, b):
 
-    x = r
-    y = g
-    z = b
+    x = int(r)
+    y = int(g)
+    z = int(b)
 
     start = 1000000000
             
@@ -40,10 +40,10 @@ def Sort(r, g, b):
                 r = color[2]
                         #print(vv_img[y, x, :])
                         
-                sumg = abs(g-y) + sumg
-                sumb = abs(b-z) + sumb
-                sumr = abs(r-x) + sumr
-                sumall = sumg + sumb + sumr
+                sumg = int(abs(g-y) + sumg)
+                sumb = int(abs(b-z) + sumb)
+                sumr = int(abs(r-x) + sumr)
+                sumall = int(sumg + sumb + sumr)
             
         #print(sumg)
         #print(sumb)
