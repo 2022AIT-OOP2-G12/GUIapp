@@ -24,7 +24,9 @@ def output():
     if not b:
         b = 0
     #取得したRGBを引数として一番近い画像のパスを取得
-    ps = 'aaa'
+    with open('./Data/data.json') as f:
+        jsn = json.load(f)
+    ps = jsn["path"]
     img = out_img(ps)
     return render_template("output.html",r,g,b,img)
 
