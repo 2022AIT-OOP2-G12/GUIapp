@@ -1,5 +1,8 @@
 from flask import Flask, request,render_template
 import pathlib
+import json
+import cv2
+import numpy as np
 from out_img import out_img
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False  # 日本語などのASCII以外の文字列を返したい場合は、こちらを設定しておく
