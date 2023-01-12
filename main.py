@@ -30,7 +30,7 @@ def output():
         jsn = json.load(f)
     ps = jsn["path"]
     img = out_img(ps)
-    return render_template("output.html",r=r,g=g,b=b,img=img)
+    return render_template("output.html",r=r,g=g,b=b,img=ps)
 
 if __name__ == "__main__":
     # debugモードが不要の場合は、debug=Trueを消してください
