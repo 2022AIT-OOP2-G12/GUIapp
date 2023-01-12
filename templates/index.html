@@ -10,6 +10,7 @@
   <body>
     <h1>(ここにアプリ名が来ます)</h1>
     <fieldset>
+      <h2>RGBの値を設定</h2>
       <div id="RGBinput">
         <div>
           <input type="checkbox" id="R" value="color_R" name="color" checked />
@@ -47,9 +48,12 @@
       </div>
     </fieldset>
     <fieldset>
+      <h2>ファイルをアップロード</h2>
       <div id="SubmitField">
         <input type="file" id="image" name="imageinput" />
-        <button type="submit">画像送信</button>
+      </div>
+      <div id="SubmitButton_location">
+        <button class="SubmitButton" type="submit">画像送信</button>
       </div>
     </fieldset>
     <a href="output.html">あとで消す</a>
