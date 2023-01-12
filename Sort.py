@@ -32,9 +32,9 @@ def Sort(r, g, b):
         g_hight, g_width, g_channel = img.shape
 
 
-        for x in range(g_width):
-            for y in range(g_hight):
-                color = img[y, x,:]
+        for m in range(g_width):
+            for n in range(g_hight):
+                color = img[n, m,:]
                 b = color[0]
                 g = color[1]
                 r = color[2]
@@ -45,11 +45,14 @@ def Sort(r, g, b):
                 sumr = int(abs(r-x) + sumr)
                 sumall = int(sumg + sumb + sumr)
             
-        #print(sumg)
-        #print(sumb)
-        #print(sumr)
-        #print(sumall)
-        #print("----------------")
+        # print(sumg)
+        # print(y)
+        # print(sumb)
+        # print(z)
+        # print(sumr)
+        # print(x)
+        # print(sumall)
+        # print("----------------")
 
         if(start>sumall):
             start = sumall
@@ -57,9 +60,13 @@ def Sort(r, g, b):
             fb = sumb
             fr = sumr
             count = i
-
+            img_name = str(img_file_name)
+        # print(img_name)
+        # print(img_file_name)
+        # print(sumall)
+        # print("----------------")
     data = {
-        "path": str(input_list[count]),
+        "path": str(img_name),
         'g': str(fg),
         'b': str(fb),
         'r': str(fr)
@@ -78,4 +85,4 @@ def Sort(r, g, b):
     #cv2.imwrite('god2.jpeg', god_img)
 
 if __name__ == "__main__":
-    Sort(200,200,200)
+    Sort(255,0,100)
