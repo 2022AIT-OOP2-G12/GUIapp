@@ -9,24 +9,29 @@
   </head>
   <body>
     <h1>(ここにアプリ名が来ます)</h1>
-    <div class="output">
-      <h2>設定したRGB値</h2>
-      <div class="output_rgb">
-        <!-- 設定したRGB値 -->
-        <p>R :{{ r }}</p>
-        <p>G :{{ g }}</p>
-        <p>B :{{ b }}</p>
-      </div>
+    <fieldset>
+      <div>
+        <h2>設定したRGB値</h2>
+        <div class="output_rgb">
+          <!-- 設定したRGB値 -->
+          <p>R :{{ r }}</p>
+          <p>G :{{ g }}</p>
+          <p>B :{{ b }}</p>
+        </div>
+    </fieldset>
 
+    <fieldset>
       <h2>設定地と似ている画像</h2>
       <div class="output_img">
         <!-- 画像出力 -->
         <img src="{{ img }}" alt="画像" />
       </div>
     </div>
-    <div class="hotter">
+    </fieldset>
+
+    <div class="Return">
       <!-- 入力画面に戻る -->
-      <a href="/">入力画面に戻る</a>
+      <a class="ReturnButton" href="/">入力画面に戻る</a>
     </div>
   </body>
 </html>
