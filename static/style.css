@@ -1,0 +1,53 @@
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgb(171, 35, 35);
+  margin: 0 0 0.5em 0;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+  background: rgb(27, 166, 52);
+  text-align: center;
+}
+
+.output {
+  margin-top: 4%;
+}
+
+#RGBinput {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#RGBGetter {
+  text-align: end;
+}
+
+#SubmitField {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.output_rgb {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  margin: 0 0 0.5em 0;
+  padding: 0;
+  background: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.output_img {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.hotter {
+  position: absolute;
+  bottom: 4px;
+  font-size: 130%;
+}
