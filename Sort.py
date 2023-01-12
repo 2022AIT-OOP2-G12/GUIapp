@@ -5,12 +5,12 @@ import json
 
 def Sort(r, g, b, self):
 
-    x = r
-    y = g
-    z = b
+    getr = r
+    getg = g
+    getb = b
 
     start = 1000000000
-            
+                
     fg = 0
     fb = 0
     fr = 0
@@ -31,28 +31,28 @@ def Sort(r, g, b, self):
         img = cv2.imdecode(img_np, cv2.IMREAD_COLOR)
         g_hight, g_width, g_channel = img.shape
 
-
         for x in range(g_width):
             for y in range(g_hight):
                 b, g, r = img[y, x]
-                        #print(vv_img[y, x, :])
-                        
-                sumg = abs(g-y) + sumg
-                sumb = abs(b-z) + sumb
-                sumr = abs(r-x) + sumr
+                    
+                            #print(vv_img[y, x, :])
+                            
+                sumb = abs(b-getb) + sumb
+                sumg = abs(g-getg) + sumg
+                sumr = abs(r-getr) + sumr
                 sumall = sumg + sumb + sumr
-            
-        #print(sumg)
-        #print(sumb)
-        #print(sumr)
-        #print(sumall)
-        #print("----------------")
+                
+        print(sumg)
+        print(sumb)
+        print(sumr)
+        print(sumall)
+        print("----------------")
 
         if(start>sumall):
             start = sumall
-            fg = sumg
-            fb = sumb
-            fr = sumr
+            fg = int(sumg)
+            fb = int(sumb)
+            fr = int(sumr)
             count = i
 
     data = {
@@ -70,6 +70,6 @@ def Sort(r, g, b, self):
     with open('./Data/data.json') as f:
         jsn = json.load(f)
 
-    #print(jsn["path"])
-    #print(type(jsn["path"]))
-    #cv2.imwrite('god2.jpeg', god_img)
+        #print(jsn["path"])
+        #print(type(jsn["path"]))
+        #cv2.imwrite('god2.jpeg', god_img)
