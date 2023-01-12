@@ -4,6 +4,13 @@ import numpy as np
 import json
 
 def Sort():
+    #仮のRGB
+    x = 125
+    y = 125
+    z = 125
+
+    start = 1000000000
+    
     input_dir = "images"
     input_list = list(pathlib.Path(input_dir).glob('**/*.jpg'))
 
@@ -17,24 +24,35 @@ def Sort():
         sumb = 0
         sumr = 0
 
+        fg = 0
+        fb = 0
+        fr = 0
+
         for x in range(g_width):
             for y in range(g_hight):
                 g, b, r = img[y, x]
                 #print(vv_img[y, x, :])
                 
-                sumg = abs(g) + sumg
-                sumb = abs(b) + sumb
-                sumr = abs(r) + sumr
+                sumg = abs(g-x) + sumg
+                sumb = abs(b-y) + sumb
+                sumr = abs(r-z) + sumr
+                sumall = sumg + sumb + sumr
     
         print(sumg)
         print(sumb)
         print(sumr)
 
+        if(start>sumall):
+            start = sumall
+            fg = sumg
+            fb = sumb
+            fr = sumr
+
         data = {
             "path": str(input_list[i]),
-            'g': str(sumg),
-            'b': str(sumb),
-            'r': str(sumr)
+            'g': str(fg),
+            'b': str(fb),
+            'r': str(fr)
         }
 
         path2 = "./Data/data.json"
