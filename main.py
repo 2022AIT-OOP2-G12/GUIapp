@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import pathlib
+import json
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False  # 日本語などのASCII以外の文字列を返したい場合は、こちらを設定しておく
 
@@ -10,7 +11,11 @@ def index():
 
 @app.route('/outout')
 def upload():
-    return render_template("output.html")
+    with open('./Data/data.json') as f:
+        jsn = json.load(f)
+    ps = jsn["path"]
+    img = out_img(ps)
+    return render_template("output.html",img)
 
 if __name__ == "__main__":
     # debugモードが不要の場合は、debug=Trueを消してください
