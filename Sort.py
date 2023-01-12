@@ -3,7 +3,7 @@ import pathlib
 import numpy as np
 import json
 
-def Sort(r, g, b, self):
+def Sort(r, g, b):
 
     x = r
     y = g
