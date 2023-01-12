@@ -12,8 +12,14 @@ def index():
 @app.route('/output', methods=["POST"])
 def output():
     r = request.form.get("colorvalue_r")
+    if not r:
+        r = 0
     g = request.form.get("colorvalue_g")
+    if not g:
+        g = 0
     b = request.form.get("colorvalue_b")
+    if not b:
+        b = 0
     #取得したRGBを引数として一番近い画像のパスを取得
     ps = 'aaa'
     img = out_img(ps)
