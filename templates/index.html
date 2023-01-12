@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <link href="static/style.css" rel="stylesheet" />
+    <link href="../static/style.css" rel="stylesheet" />
     <link rel="icon" href="static/favicon.ico" />
     <meta charset="utf-8" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -10,22 +10,37 @@
   <body>
     <h1>(ここにアプリ名が来ます)</h1>
     <fieldset>
-      <!--Formタグ(actionを/output,methodをPOST)に変更する-->
+     <!--Formタグ(actionを/output,methodをPOST)に変更する-->
       <div id="RGBinput">
         <div>
           <input type="checkbox" id="R" value="color_R" name="color" checked />
-          R : 
-          <input type="text" id="R_input" placeholder="ex)131" name="colorvalue_r" />
+          R :
+          <input
+            type="text"
+            id="R_input"
+            placeholder="ex)131"
+            name="colorvalue"
+          />
         </div>
         <div>
           <input type="checkbox" id="G" value="color_G" name="color" checked />
-          G : 
-          <input type="text" id="G_input" placeholder="ex)204" name="colorvalue_g" />
+          G :
+          <input
+            type="text"
+            id="G_input"
+            placeholder="ex)204"
+            name="colorvalue"
+          />
         </div>
         <div>
           <input type="checkbox" id="B" value="color_B" name="color" checked />
-          B : 
-          <input type="text" id="B_input" placeholder="ex)210" name="colorvalue_b" />
+          B :
+          <input
+            type="text"
+            id="B_input"
+            placeholder="ex)210"
+            name="colorvalue"
+          />
         </div>
       </div>
       <div id="RGBGetter">
@@ -33,10 +48,11 @@
       </div>
     </fieldset>
     <fieldset>
-      <div>
+      <div id="SubmitField">
         <input type="file" id="image" name="imageinput" />
         <button type="submit">画像送信</button>
       </div>
     </fieldset>
+    <a href="output.html">あとで消す</a>
   </body>
 </html>

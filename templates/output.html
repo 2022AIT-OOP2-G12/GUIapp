@@ -8,13 +8,14 @@
     <link href="../static/style.css" rel="stylesheet" />
   </head>
   <body>
+    <h1>(ここにアプリ名が来ます)</h1>
     <div class="output">
       <h2>設定したRGB値</h2>
-      <div class="input_rgb">
+      <div class="output_rgb">
         <!-- 設定したRGB値 -->
-        <p>赤：{{ r }}</p>
-        <p>緑：{{ g }}</p>
-        <p>青：{{ b }}</p>
+        <p>R :{{ r }}</p>
+        <p>G :{{ g }}</p>
+        <p>B :{{ b }}</p>
       </div>
 
       <h2>設定地と似ている画像</h2>
@@ -23,9 +24,9 @@
         <img src="data:image/png;base64,{{ img }}" alt="画像" />
       </div>
     </div>
-    <div>
+    <div class="hotter">
       <!-- 入力画面に戻る -->
-      <a href="/">入力画面に戻る</a>
+      <a href="index.html">入力画面に戻る</a>
     </div>
   </body>
 </html>
