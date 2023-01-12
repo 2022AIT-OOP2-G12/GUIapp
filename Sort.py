@@ -34,19 +34,19 @@ def Sort(r, g, b):
 
         for x in range(g_width):
             for y in range(g_hight):
-                g, b, r = img[y, x]
+                b, g, r = img[y, x]
                         #print(vv_img[y, x, :])
                         
-                sumg = abs(g-x) + sumg
-                sumb = abs(b-y) + sumb
-                sumr = abs(r-z) + sumr
+                sumg = abs(g-y) + sumg
+                sumb = abs(b-z) + sumb
+                sumr = abs(r-x) + sumr
                 sumall = sumg + sumb + sumr
             
-        print(sumg)
-        print(sumb)
-        print(sumr)
-        print(sumall)
-        print("----------------")
+        #print(sumg)
+        #print(sumb)
+        #print(sumr)
+        #print(sumall)
+        #print("----------------")
 
         if(start>sumall):
             start = sumall
@@ -70,6 +70,6 @@ def Sort(r, g, b):
     with open('./Data/data.json') as f:
         jsn = json.load(f)
 
-    print(jsn["path"])
-    print(type(jsn["path"]))
+    #print(jsn["path"])
+    #print(type(jsn["path"]))
     #cv2.imwrite('god2.jpeg', god_img)
