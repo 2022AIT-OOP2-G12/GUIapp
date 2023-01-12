@@ -2,60 +2,61 @@
 <html lang="ja">
   <head>
     <link href="../static/style.css" rel="stylesheet" />
-    <link rel="icon" href="static/favicon.ico" />
+    <link rel="icon" href="../static/favicon.ico" />
     <meta charset="utf-8" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>(ここにアプリ名が来ます)</title>
   </head>
   <body>
     <h1>(ここにアプリ名が来ます)</h1>
+    <form action="/output" method="POST">
+      <fieldset>
+        <h2>GBR値を設定</h2>
+        <div id="RGBinput">
+          <div>
+            <!-- <input type="checkbox" id="R" value="color_R" name="color" checked /> -->
+            R :
+            <input
+              type="text"
+              id="R_input"
+              placeholder="ex)131"
+              name="colorvalue_R"
+            />
+          </div>
+          <div>
+            <!-- <input type="checkbox" id="G" value="color_G" name="color" checked /> -->
+            G :
+            <input
+              type="text"
+              id="G_input"
+              placeholder="ex)204"
+              name="colorvalue_G"
+            />
+          </div>
+          <div>
+            <!-- <input type="checkbox" id="B" value="color_B" name="color" checked /> -->
+            B :
+            <input
+              type="text"
+              id="B_input"
+              placeholder="ex)210"
+              name="colorvalue_B"
+            />
+          </div>
+        </div>
+        <div id="RGBGetter">
+          <button type="submit" id="RGBsubmit">画像取得</button>
+        </div>
+      </fieldset>
+    </form>
     <fieldset>
-      <h2>RGB値を設定</h2>
-      <div id="RGBinput">
-        <div>
-          <input type="checkbox" id="R" value="color_R" name="color" checked />
-          R :
-          <input
-            type="text"
-            id="R_input"
-            placeholder="ex)131"
-            name="colorvalue"
-          />
-        </div>
-        <div>
-          <input type="checkbox" id="G" value="color_G" name="color" checked />
-          G :
-          <input
-            type="text"
-            id="G_input"
-            placeholder="ex)204"
-            name="colorvalue"
-          />
-        </div>
-        <div>
-          <input type="checkbox" id="B" value="color_B" name="color" checked />
-          B :
-          <input
-            type="text"
-            id="B_input"
-            placeholder="ex)210"
-            name="colorvalue"
-          />
-        </div>
-      </div>
-      <div id="RGBGetter">
-        <button type="submit">画像取得</button>
-      </div>
-    </fieldset>
-    <fieldset>
-      <h2>ファイルをアップロード</h2>
+      <h2>ファイルをアップロードする</h2>
       <div id="SubmitField">
         <input type="file" id="image" name="imageinput" />
-      </div>
-      <div id="SubmitButton_location">
-        <button class="SubmitButton" type="submit">画像送信</button>
+        <button type="submit" id="photosubmit">画像送信</button>
       </div>
     </fieldset>
     <a href="output.html">あとで消す</a>
   </body>
+  <script src="../static/script.js"></script>
 </html>
