@@ -21,7 +21,7 @@ def Sort(r, g, b):
 
     count = 0
 
-    input_dir = "images"
+    input_dir = "static/images"
     input_list = list(pathlib.Path(input_dir).glob('**/*.jpg'))
 
 

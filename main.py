@@ -3,7 +3,6 @@ import pathlib
 import json
 import cv2
 import numpy as np
-from out_img import out_img
 from Sort import Sort
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False  # 日本語などのASCII以外の文字列を返したい場合は、こちらを設定しておく
@@ -29,7 +28,6 @@ def output():
     with open('./Data/data.json') as f:
         jsn = json.load(f)
     ps = jsn["path"]
-    img = out_img(ps)
     return render_template("output.html",r=r,g=g,b=b,img=ps)
 
 if __name__ == "__main__":
