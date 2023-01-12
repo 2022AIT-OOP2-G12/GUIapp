@@ -34,7 +34,10 @@ def Sort(r, g, b):
 
         for x in range(g_width):
             for y in range(g_hight):
-                g, b, r = img[y, x]
+                color = img[y, x,:]
+                b = color[0]
+                g = color[1]
+                r = color[2]
                         #print(vv_img[y, x, :])
                         
                 sumg = abs(g-x) + sumg
@@ -73,3 +76,6 @@ def Sort(r, g, b):
     print(jsn["path"])
     print(type(jsn["path"]))
     #cv2.imwrite('god2.jpeg', god_img)
+
+if __name__ == "__main__":
+    Sort(200,200,200)
