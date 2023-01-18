@@ -1,7 +1,9 @@
+import os
 from flask import Flask, request,render_template
 import pathlib
 import json
 import cv2
+import flask
 import numpy as np
 from Sort import Sort
 app = Flask(__name__)
@@ -29,6 +31,25 @@ def output():
         jsn = json.load(f)
     ps = jsn["path"]
     return render_template("output.html",r=r,g=g,b=b,img=ps)
+
+# アップロード機能
+@app.route('/upload', methods=['POST'])
+def upload():
+    if 'file' not in flask.request.files:
+        return 'ファイル未指定'
+
+    # fileの取得（FileStorage型で取れる）
+    # https://tedboy.github.io/flask/generated/generated/werkzeug.FileStorage.html
+    fs = flask.request.files['file']
+
+    # 下記のような情報がFileStorageからは取れる
+    app.logger.info('file_name={}'.format(fs.filename))
+    app.logger.info('content_type={} content_length={}, mimetype={}, mimetype_params={}'.format(
+        fs.content_type, fs.content_length, fs.mimetype, fs.mimetype_params))
+
+    # ファイルを保存
+    fs.save(os.path.join('./static/images', fs.filename))
+    return render_template("index.html")
 
 if __name__ == "__main__":
     # debugモードが不要の場合は、debug=Trueを消してください
