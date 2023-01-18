@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request,render_template
 import pathlib
 import json
@@ -47,10 +48,8 @@ def upload():
         fs.content_type, fs.content_length, fs.mimetype, fs.mimetype_params))
 
     # ファイルを保存
-    fs.save('./static/images', fs.filename)
-    return render_template("output.html")
-
-
+    fs.save(os.path.join('./static/images', fs.filename))
+    return render_template("index.html")
 
 if __name__ == "__main__":
     # debugモードが不要の場合は、debug=Trueを消してください
