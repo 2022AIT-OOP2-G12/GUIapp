@@ -12,14 +12,15 @@
     <fieldset>
       <h2>RGB値を設定</h2>
       <div id="RGBinput">
+        <form method="post" action="/output">
         <div>
           <!-- <input type="checkbox" id="R" value="color_R" name="color" checked /> -->
           R :
           <input
             type="text"
-            id="R_input"
+            id="colorvalue_R"
             placeholder="ex)131"
-            name="colorvalue"
+            name="colorvalue_R"
           />
         </div>
         <div>
@@ -27,9 +28,9 @@
           G :
           <input
             type="text"
-            id="G_input"
+            id="colorvalue_G"
             placeholder="ex)204"
-            name="colorvalue"
+            name="colorvalue_G"
           />
         </div>
         <div>
@@ -37,14 +38,13 @@
           B :
           <input
             type="text"
-            id="B_input"
+            id="colorvalue_B"
             placeholder="ex)210"
-            name="colorvalue"
+            name="colorvalue_B"
           />
         </div>
-      </div>
-      <div id="RGBGetter">
         <button type="submit">画像取得</button>
+      </form>
       </div>
     </fieldset>
     <fieldset>

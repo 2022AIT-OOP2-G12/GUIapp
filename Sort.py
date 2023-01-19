@@ -9,23 +9,21 @@ def Sort(r, g, b):
     y = int(g)
     z = int(b)
 
-    start = 1000000000
+    start = 1000000000000000000
             
     fg = 0
     fb = 0
     fr = 0
 
-    sumg = 0
-    sumb = 0
-    sumr = 0
-
-    count = 0
-
     input_dir = "static/images"
     input_list = list(pathlib.Path(input_dir).glob('**/*.jpg'))
-
+    img_name = ""
 
     for i in range(len(input_list)):
+        sumall = 0
+        sumg = 0
+        sumb = 0
+        sumr = 0
         img_file_name = str(input_list[i])
         img_np = np.fromfile(img_file_name, dtype=np.uint8)
         img = cv2.imdecode(img_np, cv2.IMREAD_COLOR)
@@ -38,12 +36,13 @@ def Sort(r, g, b):
                 b = color[0]
                 g = color[1]
                 r = color[2]
-                        #print(vv_img[y, x, :])
+                #print(img[n, m,:])
                         
                 sumg = int(abs(g-y) + sumg)
                 sumb = int(abs(b-z) + sumb)
                 sumr = int(abs(r-x) + sumr)
                 sumall = int(sumg + sumb + sumr)
+                #print(abs(r-x))
             
         # print(sumg)
         # print(y)
@@ -54,16 +53,16 @@ def Sort(r, g, b):
         # print(sumall)
         # print("----------------")
 
-        if(start>sumall):
+        if(start>=sumall):
             start = sumall
             fg = sumg
             fb = sumb
             fr = sumr
-            count = i
             img_name = str(img_file_name)
         # print(img_name)
         # print(img_file_name)
         # print(sumall)
+        # print(start)
         # print("----------------")
     data = {
         "path": str(img_name),
@@ -85,4 +84,8 @@ def Sort(r, g, b):
     #cv2.imwrite('god2.jpeg', god_img)
 
 if __name__ == "__main__":
-    Sort(255,0,100)
+    Sort(34,34,34)
+    print("----------------")
+    print("----------------")
+    print("----------------")
+    Sort(204,0,0)
