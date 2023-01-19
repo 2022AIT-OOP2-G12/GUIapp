@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>アップロードされた画像一覧</title>
+  </head>
+  <body>
+    <h1>アップロードした画像一覧</h1>
+    <div>
+      <ul>
+        {% for image in images %}
+        <li>
+          <a href="/static/images/{{ image }}">{{ image }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
