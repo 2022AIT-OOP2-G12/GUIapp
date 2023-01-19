@@ -23,21 +23,3 @@ rgbsub.addEventListener('click', (e) => {
     view()
   })
 })
-
-const psub = document.querySelector('#photosubmit')
-
-psub.addEventListener('click', (e) => {
-  console.log('photosubmit動いた')
-  const photo = document.getElementById('image').value
-
-  let error_message = ''
-  if (!photo && photo === '') error_message += '画像を入力してください'
-
-  console.log(photo)
-
-  fetch('/address?', { method: 'POST', body: param }).then((response) => {
-    console.log(response)
-
-    view()
-  })
-})
