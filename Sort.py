@@ -4,6 +4,10 @@ import numpy as np
 import json
 
 def Sort(r, g, b):
+
+    x = int(r)
+    y = int(g)
+    z = int(b)
     start = 1000000000000000000
             
     fg = 0
