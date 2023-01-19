@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <title>アップロードされた画像一覧</title>
+    <link href="../static/style.css" rel="stylesheet" />
   </head>
   <body>
     <h1>アップロードした画像一覧</h1>
     <div>
       <ul>
         {% for image in images %}
-        <li>
+        <p>
           <a href="/static/images/{{ image }}">{{ image }}</a>
-        </li>
+        </p>
         {% endfor %}
       </ul>
     </div>
