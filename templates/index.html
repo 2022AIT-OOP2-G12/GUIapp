@@ -59,6 +59,9 @@
               画像送信
             </button>
           </div>
+          {% with messages = get_flashed_messages() %} {% if messages %} {% for
+          message in messages %} {{ message }} {% endfor %} {% endif %} {%
+          endwith %}
         </div>
       </form>
     </fieldset>
