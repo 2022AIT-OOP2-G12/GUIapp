@@ -1,5 +1,6 @@
 import os
-from flask import Flask, request,render_template
+import secrets
+from flask import Flask, request,render_template, flash
 import pathlib
 import json
 import cv2
@@ -8,10 +9,13 @@ import numpy as np
 from Sort import Sort
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False  # 日本語などのASCII以外の文字列を返したい場合は、こちらを設定しておく
+secret = secrets.token_urlsafe(32)
+app.secret_key = secret
 
 # http://127.0.0.1:5000/
 @app.route('/')
 def index():
+    flash('')
     return render_template("index.html")
 
 @app.route('/output', methods=["POST"])
@@ -35,12 +39,14 @@ def output():
 # アップロード機能
 @app.route('/upload', methods=['POST'])
 def upload():
-    if 'file' not in flask.request.files:
-        return 'ファイル未指定'
-
+    
     # fileの取得（FileStorage型で取れる）
     # https://tedboy.github.io/flask/generated/generated/werkzeug.FileStorage.html
     fs = flask.request.files['file']
+
+    if fs.filename == '':
+        flash('ファイルがありません')
+        return render_template("index.html")
 
     # 下記のような情報がFileStorageからは取れる
     app.logger.info('file_name={}'.format(fs.filename))
@@ -48,7 +54,10 @@ def upload():
         fs.content_type, fs.content_length, fs.mimetype, fs.mimetype_params))
 
     # ファイルを保存
-    fs.save(os.path.join('./static/images', fs.filename))
+    if fs.filename != '':
+        fs.save(os.path.join('./static/images', fs.filename))
+        flash('アップロード完了')
+
     return render_template("index.html")
 
 if __name__ == "__main__":
