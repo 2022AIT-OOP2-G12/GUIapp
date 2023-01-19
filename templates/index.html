@@ -43,7 +43,9 @@
               name="colorvalue_B"
             />
           </div>
-          <button type="submit">画像取得</button>
+          <div class="SubmitButton_location">
+            <button class="GetButton" type="submit">画像取得</button>
+          </div>
         </form>
       </div>
     </fieldset>
@@ -52,8 +54,11 @@
         <h2>ファイルをアップロード</h2>
         <div id="SubmitField">
           <input type="file" id="image" name="file" />
-          <button type="submit" id="photosubmit">画像送信</button>
-
+          <div id="RGBGetter">
+            <button type="submit" class="SubmitButton" id="photosubmit">
+              画像送信
+            </button>
+          </div>
           {% with messages = get_flashed_messages() %} {% if messages %} {% for
           message in messages %} {{ message }} {% endfor %} {% endif %} {%
           endwith %}
