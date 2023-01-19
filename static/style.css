@@ -14,6 +14,26 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  font-size: 1em;
+  font-weight: bold;
+  color: rgb(232, 29, 29);
+  margin: 0 0 0.5em 0;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+h4 {
+  font-size: 1em;
+  font-weight: bold;
+  color: rgb(232, 29, 29);
+  margin: 0 0 0.5em 0;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
 #RGBinput {
   font-weight: bold;
   font-size: 1.5em;
