@@ -13,48 +13,52 @@
       <h2>RGB値を設定</h2>
       <div id="RGBinput">
         <form method="post" action="/output">
-        <div>
-          <!-- <input type="checkbox" id="R" value="color_R" name="color" checked /> -->
-          R :
-          <input
-            type="text"
-            id="colorvalue_R"
-            placeholder="ex)131"
-            name="colorvalue_R"
-          />
-        </div>
-        <div>
-          <!-- <input type="checkbox" id="G" value="color_G" name="color" checked /> -->
-          G :
-          <input
-            type="text"
-            id="colorvalue_G"
-            placeholder="ex)204"
-            name="colorvalue_G"
-          />
-        </div>
-        <div>
-          <!-- <input type="checkbox" id="B" value="color_B" name="color" checked /> -->
-          B :
-          <input
-            type="text"
-            id="colorvalue_B"
-            placeholder="ex)210"
-            name="colorvalue_B"
-          />
-        </div>
-        <button type="submit">画像取得</button>
-      </form>
+          <div>
+            <!-- <input type="checkbox" id="R" value="color_R" name="color" checked /> -->
+            R :
+            <input
+              type="text"
+              id="colorvalue_R"
+              placeholder="ex)131"
+              name="colorvalue_R"
+            />
+          </div>
+          <div>
+            <!-- <input type="checkbox" id="G" value="color_G" name="color" checked /> -->
+            G :
+            <input
+              type="text"
+              id="colorvalue_G"
+              placeholder="ex)204"
+              name="colorvalue_G"
+            />
+          </div>
+          <div>
+            <!-- <input type="checkbox" id="B" value="color_B" name="color" checked /> -->
+            B :
+            <input
+              type="text"
+              id="colorvalue_B"
+              placeholder="ex)210"
+              name="colorvalue_B"
+            />
+          </div>
+          <button type="submit">画像取得</button>
+        </form>
       </div>
     </fieldset>
     <fieldset>
-      <form method="post" action="/upload"  enctype="multipart/form-data">
-      <h2>ファイルをアップロード</h2>
-      <div id="SubmitField">
-        <input type="file" id="image" name="file" />
-        <button type="submit" id="photosubmit">画像送信</button>
-      </div>
-    </form>
+      <form method="post" action="/upload" enctype="multipart/form-data">
+        <h2>ファイルをアップロード</h2>
+        <div id="SubmitField">
+          <input type="file" id="image" name="file" />
+          <button type="submit" id="photosubmit">画像送信</button>
+
+          {% with messages = get_flashed_messages() %} {% if messages %} {% for
+          message in messages %} {{ message }} {% endfor %} {% endif %} {%
+          endwith %}
+        </div>
+      </form>
     </fieldset>
   </body>
 </html>
