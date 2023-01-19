@@ -6,6 +6,7 @@ import json
 import cv2
 import flask
 import numpy as np
+import glob
 from Sort import Sort
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False  # 日本語などのASCII以外の文字列を返したい場合は、こちらを設定しておく
@@ -59,6 +60,18 @@ def upload():
         flash('アップロード完了')
 
     return render_template("index.html")
+
+
+@app.route('/uploaded_list/')
+def uploaded_list():
+    files = glob.glob("./static/images/*")
+    urls = []
+    for file in files:
+        urls.append({
+            "filename": os.path.basename(file),
+            "url": "/static/images/" + os.path.basename(file)
+        })
+    return render_template("saved_image.html", page_title="アップロードファイル", target_files=urls)
 
 if __name__ == "__main__":
     # debugモードが不要の場合は、debug=Trueを消してください
