@@ -1,3 +1,23 @@
+.bg_pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffe9a7;
+  opacity: 0.4;
+  z-index: -1;
+}
+.ZigZag {
+  background-image: linear-gradient(135deg, #ffc107 25%, transparent 25%),
+    linear-gradient(225deg, #ffc107 25%, transparent 25%),
+    linear-gradient(45deg, #ffc107 25%, transparent 25%),
+    linear-gradient(315deg, #ffc107 25%, #ffe9a7 25%);
+  background-position: 20px 0, 20px 0, 0 0, 0 0;
+  background-size: 40px 40px;
+  background-repeat: repeat;
+}
+
 h1 {
   text-align: center;
   font-weight: bold;
@@ -6,11 +26,11 @@ h1 {
 h2 {
   font-size: 1.5em;
   font-weight: bold;
-  color: rgb(232, 29, 29);
+  color: rgb(0, 0, 0);
   margin: 0 0 0.5em 0;
   padding: 0;
   border-bottom: 1px solid #ccc;
-  background: rgb(88, 239, 115);
+  background: rgb(239, 88, 88);
   text-align: center;
 }
 
@@ -28,6 +48,7 @@ h2 {
 #SubmitField {
   text-align: center;
   margin-top: 4%;
+  font-weight: bold;
 }
 
 .SubmitButton_location {
